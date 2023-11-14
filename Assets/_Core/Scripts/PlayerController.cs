@@ -1,13 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Camera _camera;
     private NavMeshAgent _navMeshAgent;
     private Vector3 _mousePosition;
     private Vector3 _targetPosition;
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit,  1000))
             {
-                if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Floor"))
+                if (hit.collider.gameObject.TryGetComponent(out NavMeshSurface floorMeshSurface))
                 {
                     _targetPosition = hit.point;
                     Debug.Log(_targetPosition);
