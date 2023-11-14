@@ -519,7 +519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ce2c85a69a99c4cb7583d395a1dcbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 1308138503}
 --- !u!195 &1673557998
 NavMeshAgent:
   m_ObjectHideFlags: 0
