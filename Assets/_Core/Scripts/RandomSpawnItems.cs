@@ -37,8 +37,16 @@ public class RandomSpawnItems : MonoBehaviour
     {
         float x = Random.Range(bounds.min.x, bounds.max.x);
         float z = Random.Range(bounds.min.z, bounds.max.z);
-
-        return new Vector3(x, 0, z);
+        
+        if (Physics.Raycast(new Vector3(x, 100, z), Vector3.down, out RaycastHit hit, 1000))
+        {
+            if (hit.collider.TryGetComponent(out NavMeshObstacle navMeshObstacle))
+            {
+                return SetRandomPosition(bounds);
+            }
+        }
+        
+        return new Vector3(x, transform.position.y, z);
     }
 
     IEnumerator SpwanObjectCoroutine()
@@ -47,7 +55,7 @@ public class RandomSpawnItems : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(_timelineMin, _timelineMax));
             _randomPosition = SetRandomPosition(_navMeshData.sourceBounds);
-            Instantiate(_objectSpawned, _randomPosition, Quaternion.identity);
+            // Instantiate(_objectSpawned, _randomPosition, Quaternion.identity);
         }
     }
 }
