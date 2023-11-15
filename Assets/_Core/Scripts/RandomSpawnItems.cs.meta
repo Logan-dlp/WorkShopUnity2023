@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: e78359ef22ee89549b7af859a62caf0e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _navMeshData: {fileID: 23800000, guid: 3bdd6643e3d55ac4da06387ad5e4560c, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
