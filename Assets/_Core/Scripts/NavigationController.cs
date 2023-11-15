@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class PlayerController : MonoBehaviour
+public class NavigationController : MonoBehaviour
 {
     private Camera _mainCamera;
     private NavMeshAgent _navMeshAgent;
@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        UpdateCameraPosition();
         SetTargetPosition();
         _navMeshAgent.SetDestination(_targetPosition);
     }
@@ -39,12 +38,5 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-    }
-
-    void UpdateCameraPosition()
-    {
-        _mainCamera.transform.position = new Vector3(transform.position.x, 
-            _mainCamera.transform.position.y, 
-            transform.position.z);
     }
 }
