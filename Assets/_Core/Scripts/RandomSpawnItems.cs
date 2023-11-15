@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Unity.AI.Navigation;
 using UnityEngine;
@@ -21,7 +20,7 @@ public class RandomSpawnItems : MonoBehaviour
         _navMeshSurface = GetComponent<NavMeshSurface>();
         _navMeshData = _navMeshSurface.navMeshData;
 
-        StartCoroutine(SpwanObjectCoroutine());
+        StartCoroutine(SpawnObjectCoroutine());
     }
 
     private void OnDrawGizmos()
@@ -49,7 +48,7 @@ public class RandomSpawnItems : MonoBehaviour
         return new Vector3(x, transform.position.y, z);
     }
 
-    IEnumerator SpwanObjectCoroutine()
+    IEnumerator SpawnObjectCoroutine()
     {
         while (enabled)
         {
