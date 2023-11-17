@@ -45,7 +45,7 @@ public class RandomSpawnItems : MonoBehaviour
             }
         }
         
-        return new Vector3(x, transform.position.y + .2f, z);
+        return new Vector3(x, transform.position.y, z);
     }
 
     IEnumerator SpawnObjectCoroutine()
@@ -54,7 +54,8 @@ public class RandomSpawnItems : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(_timelineMin, _timelineMax));
             _randomPosition = SetRandomPosition(_navMeshData.sourceBounds);
-            Instantiate(_objectSpawned, _randomPosition, Quaternion.Euler(Quaternion.identity.x, Random.Range(0, 359), Quaternion.identity.z));
+            GameObject ItemSpawned = Instantiate(_objectSpawned, _randomPosition, Quaternion.Euler(Quaternion.identity.x, Random.Range(0, 359), Quaternion.identity.z));
+            ItemSpawned.GetComponent<ItemRenderer>().ItemType = ItemType.Wood;
         }
     }
 }
