@@ -1,17 +1,19 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    [SerializeField] private int _maxObjectInArray = 10;
-    private List<GameObject> _inventoryArray;
-
-    public void AddObjectInIventory(GameObject gameObject)
+    [SerializeField] private int _maxObjectInList = 10;
+    private List<GameObject> _inventoryList = new List<GameObject>();
+    
+    public bool AddObjectInIventory(GameObject gameObject)
     {
-        if (_inventoryArray.Count + 1 < _maxObjectInArray)
+        if (_inventoryList.Count < _maxObjectInList)
         {
-            _inventoryArray.Add(gameObject);
+            _inventoryList.Add(gameObject);
+            return true;
         }
+
+        return false;
     }
 }

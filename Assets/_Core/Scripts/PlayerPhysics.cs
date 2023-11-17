@@ -18,7 +18,9 @@ public class PlayerPhysics : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         ItemRenderer collisionItemRenderer = collision.GetComponentInParent<ItemRenderer>();
-        _inventory.AddObjectInIventory(collisionItemRenderer.ItemTypeSource.ItemPrefabSource[(int)collisionItemRenderer.ItemType]);
-        Debug.Log((int)collision.gameObject.GetComponentInParent<ItemRenderer>().ItemType);
+        if (_inventory.AddObjectInIventory(collisionItemRenderer.ItemTypeSource.ItemPrefabSource[(int)collisionItemRenderer.ItemType]))
+        {
+            Destroy(collisionItemRenderer.gameObject);
+        }
     }
 }
