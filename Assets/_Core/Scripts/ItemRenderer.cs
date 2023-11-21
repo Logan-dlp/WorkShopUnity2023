@@ -7,6 +7,9 @@ public class ItemRenderer : MonoBehaviour
 
     private void Start()
     {
-        Instantiate(ItemTypeSource.ItemPrefabSource[(int)ItemType], transform);
+        if (transform.childCount < 1)
+        {
+            Instantiate(ItemTypeSource.ItemPrefabSource[(int)ItemType], transform);
+        }
     }
 }

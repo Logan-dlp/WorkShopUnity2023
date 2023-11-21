@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 356600931}
   - component: {fileID: 356600930}
   m_Layer: 5
-  m_Name: ItemBackground (5)
+  m_Name: ItemBackground_006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -408,7 +408,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 536555372}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1787358793}
+        m_TargetAssemblyTypeName: PlayerInventory, Assembly-CSharp
+        m_MethodName: DisplayInventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &536555372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,9 +628,9 @@ Canvas:
   m_GameObject: {fileID: 729198208}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 1997564035}
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -642,7 +654,7 @@ GameObject:
   - component: {fileID: 773824180}
   - component: {fileID: 773824179}
   m_Layer: 5
-  m_Name: ItemBackground (1)
+  m_Name: ItemBackground_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -710,7 +722,7 @@ GameObject:
   - component: {fileID: 792699420}
   - component: {fileID: 792699419}
   m_Layer: 5
-  m_Name: ItemBackground (6)
+  m_Name: ItemBackground_005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -778,7 +790,7 @@ GameObject:
   - component: {fileID: 824374972}
   - component: {fileID: 824374971}
   m_Layer: 5
-  m_Name: ItemBackground (4)
+  m_Name: ItemBackground_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1032,7 +1044,7 @@ GameObject:
   - component: {fileID: 1769556206}
   - component: {fileID: 1769556205}
   m_Layer: 5
-  m_Name: ItemBackground (2)
+  m_Name: ItemBackground_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1237,7 +1249,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvasInventory: {fileID: 729198208}
-  _maxObjectInList: 10
+  _parentItemDisplay:
+  - {fileID: 1610612598}
+  - {fileID: 2086854145}
+  - {fileID: 773824177}
+  - {fileID: 824374969}
+  - {fileID: 1769556203}
+  - {fileID: 792699417}
+  - {fileID: 356600928}
+  - {fileID: 1992677581}
+  _variableItemObject: {fileID: 2550159792781468285, guid: 5ab07320b6837e14aaafeea04580f3b8,
+    type: 3}
 --- !u!54 &1787358794
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1455,7 +1477,7 @@ GameObject:
   - component: {fileID: 1992677584}
   - component: {fileID: 1992677583}
   m_Layer: 5
-  m_Name: ItemBackground (7)
+  m_Name: ItemBackground_007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1750,7 +1772,7 @@ GameObject:
   - component: {fileID: 2086854148}
   - component: {fileID: 2086854147}
   m_Layer: 5
-  m_Name: ItemBackground (3)
+  m_Name: ItemBackground_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
