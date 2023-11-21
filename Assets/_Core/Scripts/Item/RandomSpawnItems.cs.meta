@@ -4,7 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - _navMeshData: {fileID: 23800000, guid: 3bdd6643e3d55ac4da06387ad5e4560c, type: 2}
+  - _objectSpawned: {fileID: 2550159792781468285, guid: 5ab07320b6837e14aaafeea04580f3b8,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
