@@ -19,3 +19,10 @@ MonoBehaviour:
   - {fileID: 5738565452558165081, guid: b6f36c94dbe1e0d48a5daf3cd9d2ade0, type: 3}
   - {fileID: 6027905932304562837, guid: 34d3cfa94a718c24690ea2eb4b3421fa, type: 3}
   - {fileID: 3549692172202965615, guid: 7daa359605e981145beef703ef099523, type: 3}
+  _itemUiPrefabSource:
+  - {fileID: 6499835884179085927, guid: 9dba89b1f07b50840ad3428e9f90dacd, type: 3}
+  - {fileID: 9144093467570541351, guid: 8bb448b0166d60b4aba656cc373ec1f1, type: 3}
+  - {fileID: 7571734664684356027, guid: 9a7914329dc82c841bda74b104188f88, type: 3}
+  - {fileID: 521205463254322020, guid: 12858c845fcd90945bf534a2731c28fb, type: 3}
+  - {fileID: 3110254962094905822, guid: 9ff620bb151cd594d856cc7084ce9939, type: 3}
+  - {fileID: 8411257757457333690, guid: 11a527fc04096644d8c3e17236b5abe8, type: 3}

@@ -35,14 +35,11 @@ public class PlayerInventory : MonoBehaviour
 
     private void DisplayItem(GameObject item)
     {
-        GameObject newItem = item;
-        newItem.AddComponent<CanvasRenderer>();
-        RectTransform newItemRectTransform = newItem.AddComponent<RectTransform>();
-        newItemRectTransform.localScale = new Vector3(200, 200, 200);
-        newItemRectTransform.rotation = Quaternion.Euler(0, 0, 0);
-        
+        GameObject newItem = Instantiate(item);
         _inventoryList.Add(newItem);
-        Instantiate(newItem, _parentItemDisplay[_inventoryList.IndexOf(newItem)].transform);
+        newItem.transform.SetParent(_parentItemDisplay[_inventoryList.IndexOf(newItem)].transform);
+        newItem.transform.localPosition = Vector3.zero;
+        newItem.transform.localScale = new Vector3(.7f, .7f, .7f);
     }
     
     public bool AddObjectInIventory(GameObject newItem)
