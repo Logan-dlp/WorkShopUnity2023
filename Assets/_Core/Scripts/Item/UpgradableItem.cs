@@ -16,6 +16,7 @@ public class UpgradableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     private void Awake()
     {
         _image = GetComponent<Image>();
+        _inventory = GameObject.FindObjectOfType<PlayerInventory>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -34,14 +35,23 @@ public class UpgradableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     {
         List<RaycastResult> raycastResult = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventData, raycastResult);
+        GameObject ItemLevelUp;
         foreach (RaycastResult objectInRay in raycastResult)
         {
             if (objectInRay.gameObject.TryGetComponent<UpgradableItem>(out UpgradableItem ItemInRay))
             {
-                if (ItemInRay.ItemType == ItemType)
+                if (ItemInRay.ItemType == ItemType && ItemType != ItemType.Daimond)
                 {
-                    // inventory...
-                    Debug.Log("meme type");
+                    ItemLevelUp = Instantiate(_itemTypeSource.ItemUiPrefabSource[(int)ItemType + 1], ItemInRay.transform.parent);
+                    
+                    _inventory.InventoryList.Remove(ItemInRay.gameObject);
+                    Destroy(ItemInRay.gameObject);
+                    
+                    _inventory.InventoryList.Add(ItemLevelUp);
+                    
+                    _inventory.InventoryList.Remove(gameObject);
+                    Destroy(gameObject);
+
                 }
             }
         }
