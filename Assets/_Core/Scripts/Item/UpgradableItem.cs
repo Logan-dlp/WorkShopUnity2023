@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -6,13 +5,15 @@ using UnityEngine.UI;
 
 public class UpgradableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    private Image _image;
-    private Transform _initialParent;
-
-    public ItemType ItemType;
+    [HideInInspector] public ItemType ItemType { get => _itemType; set => _itemType = value; }
+    [SerializeField] private ItemType _itemType;
+    
     [SerializeField] private ItemTypeSource _itemTypeSource;
     private PlayerInventory _inventory;
-
+    
+    private Image _image;
+    private Transform _initialParent;
+    
     private void Awake()
     {
         _image = GetComponent<Image>();

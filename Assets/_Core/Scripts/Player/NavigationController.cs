@@ -18,20 +18,20 @@ public class NavigationController : MonoBehaviour
 
     private void Update()
     {
-        SetTargetPosition();
-    }
-
-    void SetTargetPosition()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        void SetTargetPosition()
         {
-            if (Physics.Raycast(_mainCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit hit,  Single.PositiveInfinity))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                if (hit.collider.gameObject.TryGetComponent(out NavMeshSurface floorMeshSurface))
+                if (Physics.Raycast(_mainCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit hit,  Single.PositiveInfinity))
                 {
-                    _navMeshAgent.SetDestination(hit.point);
+                    if (hit.collider.gameObject.TryGetComponent(out NavMeshSurface floorMeshSurface))
+                    {
+                        _navMeshAgent.SetDestination(hit.point);
+                    }
                 }
             }
         }
+        
+        SetTargetPosition();
     }
 }

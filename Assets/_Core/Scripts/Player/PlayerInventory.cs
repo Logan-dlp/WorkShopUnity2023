@@ -6,8 +6,10 @@ public class PlayerInventory : MonoBehaviour
 {
     [SerializeField] private GameObject _canvasInventory;
     [SerializeField] private GameObject[] _parentItemDisplay = new GameObject[8];
-    // public ? => get , set for upgradable item or initialise methode for change item
-    public List<GameObject> InventoryList = new List<GameObject>();
+    
+    [HideInInspector] public List<GameObject> InventoryList { get => _inventoryList; set => _inventoryList = value; }
+    private List<GameObject> _inventoryList = new List<GameObject>();
+    
     private NavigationController _navigationController;
     private GameObject _parentItem;
     private int _maxObjectInList;
@@ -24,15 +26,10 @@ public class PlayerInventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            DisplayInventory();
+            _navigationController.enabled = _isDisplay;
+            _isDisplay = !_isDisplay;
+            _canvasInventory.SetActive(_isDisplay);
         }
-    }
-
-    public void DisplayInventory()
-    {
-        _navigationController.enabled = _isDisplay;
-        _isDisplay = !_isDisplay;
-        _canvasInventory.SetActive(_isDisplay);
     }
 
     private void DisplayItem(GameObject item, ItemType itemType)

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider), typeof(Rigidbody), typeof(PlayerInventory))]
